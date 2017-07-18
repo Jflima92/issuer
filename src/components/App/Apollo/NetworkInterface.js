@@ -4,7 +4,7 @@ export function createNetwork(token) {
   const networkInterface = createNetworkInterface({
     uri: 'https://api.github.com/graphql',
     opts: {
-      credentials: 'include',
+      credentials: 'same-origin',
     },
   });
 

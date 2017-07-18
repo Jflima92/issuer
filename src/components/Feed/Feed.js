@@ -14,21 +14,27 @@ class Feed extends Component {
 
   componentWillReceiveProps(newProps) {
     const issues = newProps.data.search.nodes;
-    console.log(issues)
 
     this.setState({
       issues: issues
     });
   }
 
+  renderIssues() {
+    return this.state.issues.map(
+      (issue, index) => {
+        if (issue && issue.title) {
+          console.log(issue);
+          return <Issue key={index} issue={issue}></Issue>
+        }
+      }
+    )
+  }
+
   render() {
     return (
       <div className="Feed">
-        {this.state.issues.map(
-          (issue, index) => {
-            return <Issue key={index}></Issue>
-          }
-        )}
+        <ul>{this.renderIssues()}</ul>
       </div>
     );
   }

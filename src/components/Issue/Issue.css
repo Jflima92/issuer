@@ -1,0 +1,27 @@
+.Issue{
+  position: relative;
+  display: block;
+  margin: 0 3px 3px 0;
+}
+
+.Issue:after{
+  clear: both;
+}
+
+.Issue .Left-Container{
+  display: inline-block;
+  width: 200px;
+  height: 120px;
+}
+
+.Issue .Left-Container .Author-Picture{
+  display: inline-block;
+  width: 60%;
+  height: auto;
+}
+
+.Issue .Right-Container{
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+}

@@ -5,7 +5,7 @@ export const withInfo = graphql(getLastIssues, {
   options: ({ language }) => {
     return {
       variables: {
-        language: 'javascript',
+        language: 'language:javascript',
       }
     }
   },
