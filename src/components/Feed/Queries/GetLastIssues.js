@@ -1,6 +1,6 @@
 import { gql } from 'react-apollo';
 
-export const GetLastIssues = gql`
+export const getLastIssues = gql`
   query GetLastIssues($language: String!) {
     search(query: $language, type: ISSUE, first: 20) {
       nodes {

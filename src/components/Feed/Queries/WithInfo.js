@@ -1,12 +1,23 @@
 import { graphql } from 'react-apollo';
-import { GetLastIssues } from './GetLastIssues';
+import { getLastIssues } from './GetLastIssues';
 
-export const WithInfo = graphql(GetLastIssues, {
+export const withInfo = graphql(getLastIssues, {
   options: ({ language }) => {
     return {
       variables: {
-        login: language,
+        language: 'javascript',
       }
     }
+  },
+  props: ({ data }) => {
+    if (data.loading) {
+      return { loading: true };
+    }
+
+    if (data.error) {
+      console.error(data.error);
+    }
+
+    return { data };
   },
 });

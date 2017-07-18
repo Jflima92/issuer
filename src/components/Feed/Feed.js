@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Feed.css';
+import { withInfo } from './Queries/WithInfo';
+import Issue from '../Issue';
 
 class Feed extends Component {
 
@@ -10,12 +12,27 @@ class Feed extends Component {
     };
   }
 
+  componentWillReceiveProps(newProps) {
+    const issues = newProps.data.search.nodes;
+    console.log(issues)
+
+    this.setState({
+      issues: issues
+    });
+  }
+
   render() {
     return (
       <div className="Feed">
-
+        {this.state.issues.map(
+          (issue, index) => {
+            return <Issue key={index}></Issue>
+          }
+        )}
       </div>
     );
   }
 }
-export default Feed;
+
+const FeedWithInfo = withInfo(Feed);
+export default FeedWithInfo;
