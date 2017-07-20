@@ -24,7 +24,6 @@ class Feed extends Component {
     return this.state.issues.map(
       (issue, index) => {
         if (issue && issue.title) {
-          console.log(issue);
           return <Issue key={index} issue={issue}></Issue>
         }
       }

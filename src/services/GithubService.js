@@ -1,4 +1,4 @@
-import { CLIENT_ID, CLIENT_SECRET } from '../config.js'
+import { CLIENT_ID, CLIENT_SECRET } from '../configs/config.js'
 
 const AUTH_URL_PATH = 'https://api.github.com/authorizations';
 

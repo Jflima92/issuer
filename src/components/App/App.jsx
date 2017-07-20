@@ -3,7 +3,7 @@ import { ApolloProvider } from 'react-apollo';
 import { createApolloClient } from './Apollo'
 import './App.css';
 import { login } from '../../services/GithubService';
-import { username, password } from '../../config';
+import { username, password } from '../../configs/config';
 import Header from '../Header'
 import Feed from '../Feed'
 
@@ -16,12 +16,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    if (username === '') {
+    if (username === '' || password === '') {
       throw new Error('You should insert your github username and password in config.js.');
     }
 
     login(username, password).then(token => {
-      console.log(token)
       client = createApolloClient(token)
       this.setState({ login: true });
     });
