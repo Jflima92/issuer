@@ -6,7 +6,8 @@ export const issue = {
   repository: {
     url: "https://github.com/jayesbe/react-native-cacheable-image",
     name: "react-native-cacheable-image",
-    owner: {
+    owner: { 
+      avatarUrl: "http://",
       login: "jayesbe",
     },
   },

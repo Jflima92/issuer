@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
+import { Card, CardHeader, CardText } from 'material-ui/Card';
 import Toggle from 'material-ui/Toggle';
+import Divider from 'material-ui/Divider';
 import './Issue.css';
 
 class Issue extends Component {
@@ -20,6 +21,7 @@ class Issue extends Component {
   };
 
   render() {
+
     const issue = this.props.issue;
     const noImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNmph60IV4crXtipTBXvZ4MW5giOLNy2EEhFRMotmorQuTl2iKRh8PEWk';
     return (
@@ -29,7 +31,7 @@ class Issue extends Component {
           subtitle={`@${issue.author.login} - ${issue.createdAt}`}
           avatar={issue.author.avatarUrl ? issue.author.avatarUrl : noImage}
         />
-
+        <Divider />
         <CardHeader
           title={`In repository ${issue.repository.name}`}
           subtitle={`From @${issue.repository.owner.login}`}

@@ -2,27 +2,28 @@ import { gql } from 'react-apollo';
 
 export const getLastIssues = gql`
   query GetLastIssues($language: String!) {
-    search(query: $language, type: ISSUE, first: 20) {
-      nodes {
-        ... on Issue {
-          createdAt
-          title
-          body
-          url
-          repository {
+      search(query: $language, type: ISSUE, first: 20) {
+        nodes {
+          ... on Issue {
+            createdAt
+            title
+            body
             url
-            name
-            owner {
+            repository {
+              url
+              name
+              owner {
+                login
+                avatarUrl
+              }
+            }
+            author {
+              avatarUrl
+              url
               login
             }
           }
-          author {
-            avatarUrl
-            url
-            login
-          }
         }
       }
-    }
   }
 `;
