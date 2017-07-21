@@ -6,7 +6,8 @@ export const withInfo = graphql(getLastIssues, {
     return {
       variables: {
         language: 'language:javascript',
-      }
+      },
+      pollInterval: 1000,
     }
   },
   props: ({ data }) => {
