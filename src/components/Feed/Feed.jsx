@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './Feed.css';
 import { withInfo } from './Queries/WithInfo';
 import Issue from '../Issue';
@@ -14,7 +15,6 @@ class Feed extends Component {
 
   componentWillReceiveProps(newProps) {
     const issues = newProps.data.search.nodes;
-
     this.setState({
       issues: issues
     });
@@ -24,7 +24,11 @@ class Feed extends Component {
     return this.state.issues.map(
       (issue, index) => {
         if (issue && issue.title) {
-          return <Issue key={index} issue={issue}></Issue>
+          return (
+            <MuiThemeProvider key={index}>
+              <Issue key={index} issue={issue}></Issue>
+            </MuiThemeProvider>
+          );
         }
       }
     )

@@ -6,7 +6,6 @@ export function withInfo(WrappedComponent) {
     constructor(props) {
       super(props);
     }
-
     render() {
       return <WrappedComponent data={issues} {...this.props} />;
     }

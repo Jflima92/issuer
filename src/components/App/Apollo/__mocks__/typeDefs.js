@@ -1,13 +1,17 @@
 export const typeDefs = `
       
       scalar ISSUE
-      type Repository {
-        url: String
-      }
-
+      
       type Author {
         url: String
         avatarUrl: String
+        login: String
+      }
+
+      type Repository {
+        url: String
+        name: String
+        owner: Author
       }
 
       type Issue {
@@ -16,6 +20,7 @@ export const typeDefs = `
         url: String
         repository: Repository
         author: Author
+        body: String
       }
 
       type Node {
@@ -23,7 +28,7 @@ export const typeDefs = `
       }
 
       type Query {
-        search(query: String, type: ISSUE, first: Int): [Node]
+        search(query: String, type: ISSUE, first: Int): Node
       }
 
       schema {

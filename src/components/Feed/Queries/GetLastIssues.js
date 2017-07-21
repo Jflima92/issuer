@@ -7,13 +7,19 @@ export const getLastIssues = gql`
         ... on Issue {
           createdAt
           title
+          body
           url
           repository {
             url
+            name
+            owner {
+              login
+            }
           }
           author {
             avatarUrl
             url
+            login
           }
         }
       }

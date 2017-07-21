@@ -1,6 +1,8 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
 }
 
 .App-header {
