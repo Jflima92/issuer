@@ -33,9 +33,12 @@ class Issue extends Component {
         />
         <Divider />
         <CardHeader
-          title={`In repository ${issue.repository.name}`}
-          subtitle={`From @${issue.repository.owner.login}`}
-        />
+          style={{ "background-color": "currentColor" }}
+        >
+          <div className="Repository">
+            <a href={issue.repository.url}>@{issue.repository.name}</a>
+          </div>
+        </CardHeader>
         <CardText>
           <Toggle
             toggled={this.state.expanded}

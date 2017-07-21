@@ -8,3 +8,11 @@
 .Issue:after{
   clear: both;
 }
+
+.Repository {
+  color: white;
+  font-size: 2em;
+  margin-bottom: 4%;
+}
+
+.Repository a { color: inherit; } 
