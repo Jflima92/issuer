@@ -36,7 +36,7 @@ class Issue extends Component {
           style={{ "background-color": "currentColor" }}
         >
           <div className="Repository">
-            <a href={issue.repository.url}>@{issue.repository.name}</a>
+            <a href={issue.repository.url}>@{issue.repository.owner.login}/{issue.repository.name}</a>
           </div>
         </CardHeader>
         <CardText>
