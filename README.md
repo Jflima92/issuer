@@ -18,7 +18,8 @@ Before starting the application you should add your github username and password
 Afterwards just `npm start` to see the magic happening.
 
 #### Testing
-To run the tests run `npm test` 
+To run the tests run `npm test`.
+To how coverage metrics run `npm test -- --coverage`
 
 And that's it! Enjoy.
 
