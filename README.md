@@ -19,7 +19,8 @@ Afterwards just `npm start` to see the magic happening.
 
 #### Testing
 To run the tests run `npm test`.
-To how coverage metrics run `npm test -- --coverage`
+
+To show coverage metrics run `npm test -- --coverage`
 
 And that's it! Enjoy.
 
