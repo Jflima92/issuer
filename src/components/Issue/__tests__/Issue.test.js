@@ -7,12 +7,17 @@ import Issue from '../Issue';
 
 
 describe('Issue', () => {
-
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
       <MuiThemeProvider>
         <Issue issue={issue}></Issue>
       </MuiThemeProvider>, div);
+  });
+
+  it('toggle starts false', () => {
+    const wrapper = shallow(<Issue issue={issue} />);
+    const toggle = wrapper.find('Toggle');
+    expect(toggle.props().toggled).toEqual(false);
   });
 })

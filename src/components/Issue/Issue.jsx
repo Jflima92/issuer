@@ -33,7 +33,7 @@ class Issue extends Component {
         />
         <Divider />
         <CardHeader
-          style={{ "background-color": "currentColor" }}
+          style={{ "backgroundColor": "currentColor" }}
         >
           <div className="Repository">
             <a href={issue.repository.url}>@{issue.repository.owner.login}/{issue.repository.name}</a>
