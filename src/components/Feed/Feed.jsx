@@ -30,6 +30,7 @@ class Feed extends Component {
             </MuiThemeProvider>
           );
         }
+        return undefined;
       }
     )
   }
